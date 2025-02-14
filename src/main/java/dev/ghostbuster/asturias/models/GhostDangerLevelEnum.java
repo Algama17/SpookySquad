@@ -1,4 +1,4 @@
-package dev.ghostbuster.asturias;
+package dev.ghostbuster.asturias.models;
 
 public enum GhostDangerLevelEnum {
 
