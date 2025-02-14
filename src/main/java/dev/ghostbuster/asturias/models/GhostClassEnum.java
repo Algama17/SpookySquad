@@ -1,6 +1,6 @@
 package dev.ghostbuster.asturias.models;
 
-public class GhostClassEnum {
+public enum GhostClassEnum {
     
     CLASE_I("Manifestación menor", 1),
     CLASE_II("Aparición móvil", 2),
