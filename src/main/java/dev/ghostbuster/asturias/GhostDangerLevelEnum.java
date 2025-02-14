@@ -1,6 +1,6 @@
 package dev.ghostbuster.asturias;
 
-public enum dangerLevelEnum {
+public enum GhostDangerLevelEnum {
 
     BAJO("Bajo", 1),
     MEDIO("Medio", 2),
@@ -10,7 +10,7 @@ public enum dangerLevelEnum {
     private final String levelName;
     private final int levelDanger;
 
-    dangerLevelEnum(String levelName, int levelDanger) {
+    GhostDangerLevelEnum(String levelName, int levelDanger) {
         this.levelName = levelName;
         this.levelDanger = levelDanger;
     }
