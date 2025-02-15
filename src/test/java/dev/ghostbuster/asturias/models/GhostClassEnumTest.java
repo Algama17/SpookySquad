@@ -36,4 +36,20 @@ public class GhostClassEnumTest {
         );
 
     }
+
+    @Test
+    @DisplayName ("testing the correctly message for every ClassEnum")
+    public void testForMessageInfoClass() {
+
+        assertAll(
+            () -> assertThat(GhostClassEnum.CLASE_I.getInfoClass(), is("Clase 1: Manifestación menor")),
+            () -> assertThat(GhostClassEnum.CLASE_II.getInfoClass(), is("Clase 2: Aparición móvil")),
+            () -> assertThat(GhostClassEnum.CLASE_III.getInfoClass(), is("Clase 3: Entidad inteligente")),
+            () -> assertThat(GhostClassEnum.CLASE_IV.getInfoClass(), is("Clase 4: Fantasma histórico")),
+            () -> assertThat(GhostClassEnum.CLASE_V.getInfoClass(), is("Clase 5: Espíritu antropomorfo")),
+            () -> assertThat(GhostClassEnum.CLASE_VI.getInfoClass(), is("Clase 6: Espíritu demoníaco")),
+            () -> assertThat(GhostClassEnum.CLASE_VII.getInfoClass(), is("Clase 7: Entidad ultraterrena"))
+        );
+
+    }
 }
