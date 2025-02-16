@@ -13,16 +13,20 @@ import static org.hamcrest.Matchers.*;
 
 public class GhostDangerLevelEnumTest {
    
-
-
     @Test
-    @DisplayName ("Test that the DangerLevel is the predefined one")
-    void testDangerIsSameLevel() {
+    @DisplayName ("test a display names of danger levels")
+    void testDisplayDangerLevel() {
 
-        assertThat(GhostDangerLevelEnum.BAJO.getLevelDanger(), equalTo(1));
-        assertThat(GhostDangerLevelEnum.MEDIO.getLevelDanger(), equalTo(2));
-        assertThat(GhostDangerLevelEnum.ALTO.getLevelDanger(), equalTo(3));
-        assertThat(GhostDangerLevelEnum.CRITICO.getLevelDanger(), equalTo(4));
+        String[] displayNames = GhostDangerLevelEnum.getDisplayNames();
+
+        assertThat(displayNames, hasItem ("Bajo"));
+        assertThat(displayNames, hasItem ("Medio"));
+        assertThat(displayNames, hasItem ("Alto"));
+        assertThat(displayNames, hasItem ("Crítico"));
+
+        assertThat(displayNames.length, equalTo(4));
+
     }
+
 
 }   
