@@ -1,5 +1,6 @@
 package dev.ghostbuster.asturias.models;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
@@ -12,20 +13,17 @@ import static org.hamcrest.Matchers.*;
 
 public class GhostDangerLevelEnumTest {
    
+
+
     @Test
-    void testValues() {
+    @DisplayName ("Test that the name is the predefined one")
+    void testLevelIsSameName() {
 
-        GhostDangerLevelEnum[] expectedValues = {
+        assertThat(GhostDangerLevelEnum.BAJO.getLevelName(), equalTo ("Bajo"));
+        assertThat(GhostDangerLevelEnum.MEDIO.getLevelName(), equalTo ("Medio"));
+        assertThat(GhostDangerLevelEnum.ALTO.getLevelName(), equalTo ("Alto"));
+        assertThat(GhostDangerLevelEnum.CRITICO.getLevelName(), equalTo ("Crítico"));
 
-            GhostDangerLevelEnum.BAJO,
-            GhostDangerLevelEnum.MEDIO,
-            GhostDangerLevelEnum.ALTO,
-            GhostDangerLevelEnum.CRITICO
+        
 
-        };
-
-        GhostDangerLevelEnum[] actualValues = GhostDangerLevelEnum.values();
-        assertThat(actualValues, equalTo(expectedValues));
-
-    }
 }   
