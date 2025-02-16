@@ -16,20 +16,30 @@ public enum GhostDangerLevelEnum {
     }
 
     public String getLevelName() {
-        return levelName;
+        switch (this) {
+            case BAJO: return "Bajo";
+            case MEDIO: return "Medio";
+            case ALTO: return "Alto";
+            case CRITICO: return "Crítico";
+            default: return name();
+        }
     }
-
     public int getLevelDanger() {
         return levelDanger;
     }
     public static String[] getDisplayNames() {
-        GhostDangerLevelEnum[] values = GhostDangerLevelEnum.values();
-        String[] displayNames = new String[values.length];
-        for (int i = 0; i < values.length; i++) {
-            displayNames[i] = values[i].getLevelName(); // Usa getLevelName() para obtener el nombre descriptivo
-        }
-        return displayNames;
-} 
+        return java.util.Arrays.stream(values())
+            .map(level -> {
+                switch (level) {
+                    case BAJO: return "Bajo";
+                    case MEDIO: return "Medio";
+                    case ALTO: return "Alto";
+                    case CRITICO: return "Crítico";
+                    default: return level.name();
+                }
+            })
+            .toArray(String[]::new);
+    }
 }
 
 
