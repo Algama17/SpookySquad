@@ -48,18 +48,7 @@ public class Ghost {
         return ghostAfinity;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-            "%-5d %-20s %-35s %-15s %-15s %-20s %-15s",
-            id,
-            ghostName,
-            ghostClass.getInfoClass(),
-            dangerLevel.getLevelName(),
-            captureDate,
-            specialAbility,
-            ghostAfinity
-        );
-    }
+
+    
 
 }
