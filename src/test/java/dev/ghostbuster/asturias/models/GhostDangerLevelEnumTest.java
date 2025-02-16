@@ -24,6 +24,6 @@ public class GhostDangerLevelEnumTest {
         assertThat(GhostDangerLevelEnum.ALTO.getLevelName(), equalTo ("Alto"));
         assertThat(GhostDangerLevelEnum.CRITICO.getLevelName(), equalTo ("Crítico"));
 
-        
+    }    
 
 }   
