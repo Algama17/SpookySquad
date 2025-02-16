@@ -9,8 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class GhostClassEnumTest {
-  
-
+   
 
     @Test
     @DisplayName ("testing the correctly message for every ClassEnum")
