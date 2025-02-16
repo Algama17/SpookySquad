@@ -14,20 +14,29 @@ import java.util.Set;
 
 public class GhostDangerLevelEnumTest {
    
-
-
-
     @Test
-    void testGetLevelName() {
+    void testValues() {
 
         GhostDangerLevelEnum[] values = GhostDangerLevelEnum.values();
-        Set <String> levelNames = new HashSet <>();
-        
-        for (GhostDangerLevelEnum level : values) {
-            assertThat (levelNames.add (level.getLevelName()), equalTo(true));
-        }
-        assertThat (levelNames.size(, equalTo(values.length));
+        assertThat (values.length, equalTo (4));
+
+        assertThat (values[0], hasProperty("levelName", equalTo("Bajo")));
+        assertThat (values[0], hasProperty("levelDanger", equalTo(1)));
+
+        assertThat (values[1], hasProperty("levelName", equalTo("Medio")));
+        assertThat (values[1], hasProperty("levelDanger", equalTo(2)));
+
+        assertThat (values[2], hasProperty("levelName", equalTo("Alto")));
+        assertThat (values[2], hasProperty("levelDanger", equalTo(3)));
+
+        assertThat (values[3], hasProperty("levelName", equalTo("Crítico")));
+        assertThat (values[3], hasProperty("levelDanger", equalTo(4)));
+
     }
 
-  
+
+
+   
+
+
 }
