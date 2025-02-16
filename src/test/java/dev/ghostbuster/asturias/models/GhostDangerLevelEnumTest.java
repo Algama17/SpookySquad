@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-import java.util.HashSet;
-import java.util.Set; 
 
 
 
@@ -17,26 +15,17 @@ public class GhostDangerLevelEnumTest {
     @Test
     void testValues() {
 
-        GhostDangerLevelEnum[] values = GhostDangerLevelEnum.values();
-        assertThat (values.length, equalTo (4));
+        GhostDangerLevelEnum[] expectedValues = {
 
-        assertThat (values[0], hasProperty("levelName", equalTo("Bajo")));
-        assertThat (values[0], hasProperty("levelDanger", equalTo(1)));
+            GhostDangerLevelEnum.BAJO,
+            GhostDangerLevelEnum.MEDIO,
+            GhostDangerLevelEnum.ALTO,
+            GhostDangerLevelEnum.CRITICO
 
-        assertThat (values[1], hasProperty("levelName", equalTo("Medio")));
-        assertThat (values[1], hasProperty("levelDanger", equalTo(2)));
+        };
 
-        assertThat (values[2], hasProperty("levelName", equalTo("Alto")));
-        assertThat (values[2], hasProperty("levelDanger", equalTo(3)));
-
-        assertThat (values[3], hasProperty("levelName", equalTo("Crítico")));
-        assertThat (values[3], hasProperty("levelDanger", equalTo(4)));
+        GhostDangerLevelEnum[] actualValues = GhostDangerLevelEnum.values();
+        assertThat(actualValues, equalTo(expectedValues));
 
     }
-
-
-
-   
-
-
-}
+}   
