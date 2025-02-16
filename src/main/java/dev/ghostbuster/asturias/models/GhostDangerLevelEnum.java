@@ -22,6 +22,14 @@ public enum GhostDangerLevelEnum {
     public int getLevelDanger() {
         return levelDanger;
     }
+    public static String[] getDisplayNames() {
+        GhostDangerLevelEnum[] values = GhostDangerLevelEnum.values();
+        String[] displayNames = new String[values.length];
+        for (int i = 0; i < values.length; i++) {
+            displayNames[i] = values[i].getLevelName(); // Usa getLevelName() para obtener el nombre descriptivo
+        }
+        return displayNames;
+} 
 }
 
 
