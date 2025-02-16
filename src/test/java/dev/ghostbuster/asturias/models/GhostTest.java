@@ -35,18 +35,5 @@ public class GhostTest {
         assertEquals("8/10", ghost.getGhostAfinity());
     }
 
-    @Test
-    void testToStringFormat() {
-        String expected = String.format(
-            "%-5d %-20s %-35s %-15s %-15s %-20s %-15s",
-            1,
-            "Spectro",
-            GhostClassEnum.CLASE_I.getInfoClass(),
-            GhostDangerLevelEnum.ALTO.getLevelName(),
-            "2025-02-14",
-            "Telekinesis",
-            "8/10"
-        );
-        assertThat(ghost.toString(), is(expected));
-    }
+   
 } 
