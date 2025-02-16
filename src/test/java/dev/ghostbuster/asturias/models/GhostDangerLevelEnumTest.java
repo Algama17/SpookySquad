@@ -16,14 +16,13 @@ public class GhostDangerLevelEnumTest {
 
 
     @Test
-    @DisplayName ("Test that the name is the predefined one")
-    void testLevelIsSameName() {
+    @DisplayName ("Test that the DangerLevel is the predefined one")
+    void testDangerIsSameLevel() {
 
-        assertThat(GhostDangerLevelEnum.BAJO.getLevelName(), equalTo ("Bajo"));
-        assertThat(GhostDangerLevelEnum.MEDIO.getLevelName(), equalTo ("Medio"));
-        assertThat(GhostDangerLevelEnum.ALTO.getLevelName(), equalTo ("Alto"));
-        assertThat(GhostDangerLevelEnum.CRITICO.getLevelName(), equalTo ("Crítico"));
-
-    }    
+        assertThat(GhostDangerLevelEnum.BAJO.getLevelDanger(), equalTo(1));
+        assertThat(GhostDangerLevelEnum.MEDIO.getLevelDanger(), equalTo(2));
+        assertThat(GhostDangerLevelEnum.ALTO.getLevelDanger(), equalTo(3));
+        assertThat(GhostDangerLevelEnum.CRITICO.getLevelDanger(), equalTo(4));
+    }
 
 }   
