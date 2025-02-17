@@ -7,12 +7,12 @@ public enum GhostDangerLevelEnum {
     ALTO("Alto", 3),
     CRITICO("Crítico", 4);
 
-    private final String levelName;
-    private final int levelDanger;
+    private final String displayName;
+    private final int level;
 
-    GhostDangerLevelEnum(String levelName, int levelDanger) {
-        this.levelName = levelName;
-        this.levelDanger = levelDanger;
+    GhostDangerLevelEnum(String displayName, int level) {
+        this.displayName = displayName;
+        this.level = level;
     }
 
     public String getLevelName() {
@@ -26,7 +26,7 @@ public enum GhostDangerLevelEnum {
     }
 
     public int getLevelDanger() {
-        return levelDanger;
+        return level;
     }
     public static String[] getDisplayNames() {
         return java.util.Arrays.stream(values())
