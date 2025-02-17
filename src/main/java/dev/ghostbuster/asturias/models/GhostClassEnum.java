@@ -1,7 +1,6 @@
 package dev.ghostbuster.asturias.models;
 
 public enum GhostClassEnum {
-    
     CLASE_I("Manifestación menor", 1),
     CLASE_II("Aparición móvil", 2),
     CLASE_III("Entidad inteligente", 3),
@@ -30,4 +29,21 @@ public enum GhostClassEnum {
         return String.format("Clase %s: %s", levelClass, descriptionClass);
     }
 
+    public static String[] getDisplayNames() {
+        GhostClassEnum[] values = GhostClassEnum.values();
+        String[] displayNames = new String[values.length];
+        for (int i = 0; i < values.length; i++) {
+            displayNames[i] = values[i].getInfoClass();
+        }
+        return displayNames;
+    }
+
+    public static GhostClassEnum fromDisplayName(String displayName) {
+        for (GhostClassEnum ghostClass : values()) {
+            if (ghostClass.getInfoClass().equals(displayName)) {
+                return ghostClass;
+            }
+        }
+        throw new IllegalArgumentException("No se encontró una clase de fantasma para: " + displayName);
+    }
 }

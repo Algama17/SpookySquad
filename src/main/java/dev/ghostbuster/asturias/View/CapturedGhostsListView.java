@@ -1,54 +1,48 @@
 package dev.ghostbuster.asturias.View;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 import dev.ghostbuster.asturias.controller.Controller;
 import dev.ghostbuster.asturias.models.Ghost;
+import java.awt.BorderLayout;
 
 public class CapturedGhostsListView extends JDialog {
-    public CapturedGhostsListView(GhostController ghostController) {
+    public CapturedGhostsListView(Controller controller) {
         super((JFrame) null, "Lista de Fantasmas Capturados", true);
-        setSize(800, 600);
+        setSize(600, 400);
         setLayout(new BorderLayout());
 
-        // Área de texto para mostrar resultados
-        JTextArea resultArea = new JTextArea(20, 50);
-        resultArea.setEditable(false);
-        resultArea.setOpaque(false);
-        resultArea.setForeground(Color.WHITE);
 
-        JScrollPane scrollPane = new JScrollPane(resultArea);
-        scrollPane.setOpaque(false);
-        scrollPane.getViewport().setOpaque(false);
-        scrollPane.setBorder(null);
+        JTextArea ghostListArea = new JTextArea();
+        ghostListArea.setEditable(false);
 
-        // Obtener la lista de fantasmas capturados
-        List<Ghost> ghosts = ghostController.getGhosts();
+        List<Ghost> ghosts = controller.getAllGhosts();
         StringBuilder allGhosts = new StringBuilder("Lista de Fantasmas Capturados:\n");
-        for (Ghost ghost : ghosts) {
-            allGhosts.append("ID: ").append(ghost.getId())
-                     .append(", Nombre: ").append(ghost.getName())
-                     .append(", Clase: ").append(ghost.getClassType().getDisplayName())
-                     .append(", Nivel de Peligro: ").append(ghost.getDangerLevel().getDisplayName())
-                     .append(", Habilidad especial: ").append(ghost.getSpecialAbility())
-                     .append("\n");
-        }
-        resultArea.setText(allGhosts.toString());
-
-        // Panel inferior con fondo semitransparente
-        JPanel bottomPanel = new JPanel(new BorderLayout()) {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(new Color(0, 0, 0, 150));
-                g.fillRect(0, 0, getWidth(), getHeight());
+        if (ghosts.isEmpty()) {
+            allGhosts.append("No hay fantasmas capturados aún.\n");
+        } else {
+            for (Ghost ghost : ghosts) {
+                allGhosts.append("ID: ").append(ghost.getId())
+                        .append(", Nombre: ").append(ghost.getGhostName())
+                        .append(", Clase: ").append(ghost.getGhostClass().getInfoClass())
+                        .append(", Nivel de Peligro: ").append(ghost.getDangerLevel().getLevelName())
+                        .append(", Habilidad Especial: ").append(ghost.getSpecialAbility())
+                        .append("\n");
             }
-        };
-        bottomPanel.setOpaque(false);
-        bottomPanel.add(scrollPane, BorderLayout.CENTER);
+        }
 
-        add(bottomPanel);
+        ghostListArea.setText(allGhosts.toString());
+
+        JScrollPane scrollPane = new JScrollPane(ghostListArea);
+        add(scrollPane, BorderLayout.CENTER);
+
+        JButton closeButton = new JButton("Cerrar");
+        closeButton.addActionListener(e -> dispose());
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(closeButton);
+        add(buttonPanel, BorderLayout.SOUTH);
+
         setLocationRelativeTo(null);
         setVisible(true);
     }
