@@ -1,7 +1,7 @@
 package dev.ghostbuster.asturias.models;
 
 public enum GhostClassEnum {
-public enum GhostClassEnum {
+
     CLASE_I("Manifestación menor", 1),
     CLASE_II("Aparición móvil", 2),
     CLASE_III("Entidad inteligente", 3),
@@ -34,16 +34,8 @@ public enum GhostClassEnum {
         GhostClassEnum[] values = GhostClassEnum.values();
         String[] displayNames = new String[values.length];
         for (int i = 0; i < values.length; i++) {
-<<<<<<< HEAD
             displayNames[i] = values[i].getInfoClass(); 
         }
         return displayNames;
     }
 }
-=======
-            displayNames[i] = values[i].getInfoClass(); // Usa getInfoClass() para obtener el nombre descriptivo
-        }
-        return displayNames;
-    }
-}
->>>>>>> GBA-5_feature/GhostClassEnumTest

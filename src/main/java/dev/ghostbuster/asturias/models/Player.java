@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Player {
-      private String playerName;
+    private String playerName;
     private final List<Ghost> ghosts = new ArrayList<>();
     private int nextId = 1;
 
