@@ -42,7 +42,7 @@ public class GhostTest {
             1,
             "Spectro",
             GhostClassEnum.CLASE_I.getInfoClass(),
-            GhostDangerLevelEnum.ALTO.getLevelName(),
+            GhostDangerLevelEnum.ALTO.name(),
             "2025-02-14",
             "Telekinesis",
             "8/10"
