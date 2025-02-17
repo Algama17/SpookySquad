@@ -33,9 +33,8 @@ public enum GhostClassEnum {
         GhostClassEnum[] values = GhostClassEnum.values();
         String[] displayNames = new String[values.length];
         for (int i = 0; i < values.length; i++) {
-            displayNames[i] = values[i].getInfoClass(); // Usa getInfoClass() para obtener el nombre descriptivo
+            displayNames[i] = values[i].getInfoClass(); 
         }
         return displayNames;
     }
-    
 }
