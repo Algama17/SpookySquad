@@ -18,30 +18,30 @@ public class GhostViewGUI extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
 
-        JButton captureButton = new JButton("Capturar Fantasma");
-        JButton viewListButton = new JButton("Ver Lista de Fantasmas Capturados");
-        JButton releaseGhostButton = new JButton("Liberar un Fantasma");
-        JButton filterByClassButton = new JButton("Filtrar Fantasmas por Clase");
-        JButton filterByMonthButton = new JButton("Ver Fantasmas Capturados en un Mes");
-        JButton exitButton = new JButton("Salir");
+        JButton capturarFantasma = new JButton("Capturar Fantasma");
+        JButton listaFantasmas = new JButton("Ver Lista de Fantasmas Capturados");
+        JButton liberarFantasma = new JButton("Liberar un Fantasma");
+        JButton filtraClase = new JButton("Filtrar Fantasmas por Clase");
+        JButton fantasmasMes = new JButton("Ver Fantasmas Capturados en un Mes");
+        JButton salir = new JButton("Salir");
 
-        captureButton.addActionListener(e -> new CaptureGhostView(controller));
-        viewListButton.addActionListener(e -> new CapturedGhostsListView(controller));
-        exitButton.addActionListener(e -> System.exit(0));
+        capturarFantasma.addActionListener(e -> new CaptureGhostView(controller));
+        listaFantasmas.addActionListener(e -> new CapturedGhostsListView(controller));
+        salir.addActionListener(e -> System.exit(0));
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-        buttonPanel.add(captureButton);
+        buttonPanel.add(capturarFantasma);
         buttonPanel.add(Box.createVerticalStrut(10));
-        buttonPanel.add(viewListButton);
+        buttonPanel.add(listaFantasmas);
         buttonPanel.add(Box.createVerticalStrut(10));
-        buttonPanel.add(releaseGhostButton);
+        buttonPanel.add(liberarFantasma);
         buttonPanel.add(Box.createVerticalStrut(10));
-        buttonPanel.add(filterByClassButton);
+        buttonPanel.add(filtraClase);
         buttonPanel.add(Box.createVerticalStrut(10));
-        buttonPanel.add(filterByMonthButton);
+        buttonPanel.add(fantasmasMes);
         buttonPanel.add(Box.createVerticalStrut(10));
-        buttonPanel.add(exitButton);
+        buttonPanel.add(salir);
 
         JPanel centeredButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         centeredButtonPanel.add(buttonPanel);

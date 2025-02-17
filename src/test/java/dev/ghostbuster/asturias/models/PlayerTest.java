@@ -1,4 +1,5 @@
 package dev.ghostbuster.asturias.models;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,12 +8,15 @@ import java.time.LocalDate;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 public class PlayerTest {
       private Player player;
+
     @BeforeEach
     void setUp() {
         player = new Player("TestPlayer");
     }
+
     @Test
     void testCaptureGhost() {
         player.captureGhost("Phantom", GhostClassEnum.CLASE_III, GhostDangerLevelEnum.MEDIO, "Invisibilidad", "8/10");
@@ -20,6 +24,7 @@ public class PlayerTest {
         assertEquals(1, ghosts.size());
         assertEquals("Phantom", ghosts.get(0).getGhostName());
     }
+
     @Test
     void testReleaseGhostById() {
         player.captureGhost("Specter", GhostClassEnum.CLASE_I, GhostDangerLevelEnum.BAJO, "Flotar", "10/10");
@@ -27,6 +32,7 @@ public class PlayerTest {
         assertTrue(player.releaseGhostById(ghostId));
         assertTrue(player.getGhosts().isEmpty());
     }
+
     @Test
     void testFilterGhostsByClass() {
         player.captureGhost("Wraith", GhostClassEnum.CLASE_IV, GhostDangerLevelEnum.ALTO, "Telepatía", "2/10");
@@ -34,6 +40,7 @@ public class PlayerTest {
         assertThat(filtered, hasSize(1));
         assertEquals("Wraith", filtered.get(0).getGhostName());
     }
+
     @Test
     void testFilterGhostsByDangerLevel() {
         player.captureGhost("Ghoul", GhostClassEnum.CLASE_V, GhostDangerLevelEnum.CRITICO, "Terror", "5/10");
@@ -41,6 +48,7 @@ public class PlayerTest {
         assertThat(filtered, hasSize(1));
         assertEquals("Ghoul", filtered.get(0).getGhostName());
     }
+
     @Test
     void testFilterGhostsByDate() {
         String today = LocalDate.now().toString();
@@ -49,6 +57,7 @@ public class PlayerTest {
         assertThat(filtered, hasSize(1));
         assertEquals("Spirit", filtered.get(0).getGhostName());
     }
+
     @Test
     void testGetPlayerName() {
         assertEquals("TestPlayer", player.getPlayerName());
