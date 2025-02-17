@@ -1,6 +1,10 @@
 package dev.ghostbuster.asturias.controller;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 import dev.ghostbuster.asturias.models.Ghost;
 import dev.ghostbuster.asturias.models.GhostClassEnum;
 import dev.ghostbuster.asturias.models.GhostDangerLevelEnum;
@@ -8,6 +12,10 @@ import dev.ghostbuster.asturias.models.Player;
 
 public class Controller {
     private final Player player;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     public Controller(String playerName) {
         this.player = new Player(playerName);
     }

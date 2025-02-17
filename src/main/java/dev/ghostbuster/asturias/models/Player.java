@@ -6,10 +6,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Player {
+<<<<<<< HEAD
 
       private String playerName;
     private final List<Ghost> ghosts = new ArrayList<>();
     private int nextId = 1;
+=======
+    private String playerName;
+    private final List<Ghost> ghosts = new ArrayList<>();
+    private int nextId = 1;
+
+>>>>>>> dev
     public Player(String playerName) {
         this.playerName = playerName;
     }
