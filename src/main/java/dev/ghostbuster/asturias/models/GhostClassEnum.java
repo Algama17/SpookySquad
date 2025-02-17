@@ -16,15 +16,15 @@ public enum GhostClassEnum {
     GhostClassEnum(String descriptionClass, int levelClass) {
         this.descriptionClass = descriptionClass;
         this.levelClass = levelClass;
-    }
 
+    }  
     public String getDescriptionClass() {
         return descriptionClass;
     }
 
     public int getLevelClass() {
         return levelClass;
-    }
+    }  
 
     public String getInfoClass() {
         return String.format("Clase %s: %s", levelClass, descriptionClass);
@@ -34,8 +34,16 @@ public enum GhostClassEnum {
         GhostClassEnum[] values = GhostClassEnum.values();
         String[] displayNames = new String[values.length];
         for (int i = 0; i < values.length; i++) {
+<<<<<<< HEAD
             displayNames[i] = values[i].getInfoClass(); 
         }
         return displayNames;
     }
 }
+=======
+            displayNames[i] = values[i].getInfoClass(); // Usa getInfoClass() para obtener el nombre descriptivo
+        }
+        return displayNames;
+    }
+}
+>>>>>>> GBA-5_feature/GhostClassEnumTest
