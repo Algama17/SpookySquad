@@ -1,9 +1,21 @@
 package dev.ghostbuster.asturias.models;
+<<<<<<< HEAD
+=======
 
+>>>>>>> dev
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+<<<<<<< HEAD
+public class GhostDangerLevelEnumTest {
+    
+    @Test
+    @DisplayName ("test a display names of danger levels")
+    void testDisplayDangerLevel() {
+        String[] displayNames = GhostDangerLevelEnum.getDisplayNames();
+        MatcherAssert.assertThat(displayNames.length, Matchers.is(4));
+=======
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -64,10 +76,15 @@ public class GhostDangerLevelEnumTest {
 
         MatcherAssert.assertThat(displayNames.length, Matchers.is(4));
 
+>>>>>>> dev
         MatcherAssert.assertThat(displayNames[0], Matchers.is("Bajo"));
         MatcherAssert.assertThat(displayNames[1], Matchers.is("Medio"));
         MatcherAssert.assertThat(displayNames[2], Matchers.is("Alto"));
         MatcherAssert.assertThat(displayNames[3], Matchers.is("Crítico"));
     }
+<<<<<<< HEAD
+}
+=======
 
 }
+>>>>>>> dev

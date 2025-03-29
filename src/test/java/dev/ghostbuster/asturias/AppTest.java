@@ -1,18 +1,18 @@
 package dev.ghostbuster.asturias;
 
+import dev.ghostbuster.asturias.controller.Controller;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Unit test for simple App.
- */
+
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
+
+
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    void testControllerInitialization() {
+        Controller controller = new Controller("Jugador1");
+
+
+        assertEquals("Jugador1", controller.getPlayerName());
     }
 }
