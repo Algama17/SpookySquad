@@ -1,17 +1,12 @@
 package dev.ghostbuster.asturias;
 
-/**
- * Hello world!
- */
-public final class App {
-    private App() {
-    }
+import dev.ghostbuster.asturias.controller.Controller;
+import dev.ghostbuster.asturias.View.GhostViewGUI;
+import javax.swing.SwingUtilities;
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Controller controller = new Controller("Jugador1");
+        SwingUtilities.invokeLater(() -> new GhostViewGUI(controller));
     }
 }
